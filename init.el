@@ -13,7 +13,7 @@
 (require 'cl)
 
 ;;add whatever packages you want here
-(defvar zilongshanren/packages '(
+(defvar qiufenglangzi/packages '(
 				   company
 				   monokai-theme
 				   hungry-delete
@@ -23,20 +23,20 @@
 				   js2-mode
 				   nodejs-repl
 				   exec-path-from-shell
-				   
+				   popwin
 				   )  "Default packages")
 
-(setq package-selected-packages zilongshanren/packages)
+(setq package-selected-packages qiufenglangzi/packages)
 
-(defun zilongshanren/packages-installed-p ()
-    (loop for pkg in zilongshanren/packages
+(defun qiufenglangzi/packages-installed-p ()
+    (loop for pkg in qiufenglangzi/packages
           when (not (package-installed-p pkg)) do (return nil)
           finally (return t)))
 
-(unless (zilongshanren/packages-installed-p)
+(unless (qiufenglangzi/packages-installed-p)
     (message "%s" "Refreshing package database...")
     (package-refresh-contents)
-    (dolist (pkg zilongshanren/packages)
+    (dolist (pkg qiufenglangzi/packages)
       (when (not (package-installed-p pkg))
         (package-install pkg))))
 
@@ -125,22 +125,36 @@
             charset
             (font-spec :family "Microsoft Yahei" :size 16)))
 
-;; 配置缩进
+;; 
 (setq indent-tabs-mode nil)
 (setq default-tab-width 4)
 (setq tab-width 4)
-  
+
+;; 当修改了配置文件,自动重新加载
+(global-auto-revert-mode t)
+;; 自动保存文件
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+(require 'popwin)
+(popwin-mode t)
+
+(abbrev-mode t)
+(define-abbrev-table 'global-abbrev-table '(
+											("qflz" "qiufenglangzi")
+											))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-save-timeout 3)
  '(company-idle-delay 0.08)
  '(company-minimum-prefix-length 1)
  '(custom-safe-themes
    (quote
-    ("6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default))))
+	("6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
