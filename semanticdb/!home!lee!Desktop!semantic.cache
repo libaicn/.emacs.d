@@ -1,0 +1,30 @@
+;; Object Desktop/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Desktop/"
+  :tables
+  (list
+    (semanticdb-table "Test.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("Test" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [50 63]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [26 188]))                  
+                :type "class")
+                nil [3 191]))          
+      :file "Test.java"
+      :pointmax 196
+      :fsize 197
+      :lastmodtime '(22807 13888 39434 993000)
+      :unmatched-syntax nil))
+  :file "!home!lee!Desktop!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

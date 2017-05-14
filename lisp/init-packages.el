@@ -17,6 +17,7 @@
 				   nodejs-repl
 				   exec-path-from-shell
 				   popwin
+				   jdee
 				   )  "Default packages")
 
 (setq package-selected-packages qiufenglangzi/packages)
@@ -40,7 +41,6 @@
 (require 'hungry-delete)
 (global-hungry-delete-mode)
 
-(require 'smartparens-config)
 ;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 
