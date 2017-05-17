@@ -1,10 +1,10 @@
 ;;; nodejs-repl-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "nodejs-repl" "nodejs-repl.el" (22796 43955
-;;;;;;  931543 555000))
+;;;### (autoloads nil "nodejs-repl" "nodejs-repl.el" (22812 25375
+;;;;;;  459358 494000))
 ;;; Generated autoloads from nodejs-repl.el
 
 (autoload 'nodejs-repl-send-region "nodejs-repl" "\
